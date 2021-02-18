@@ -41,7 +41,7 @@ else:
 async def check_user(id):
     ok = True
     try:
-        await BotzHub(GetParticipantRequest(channel='@BotzHub', user_id=id))
+        await BotzHub(GetParticipantRequest(channel='@NexaBotsUpdates', user_id=id))
         ok = True
     except UserNotParticipantError:
         ok = False
@@ -53,15 +53,15 @@ async def start(event):
     await event.reply(f"Hello {ok.user.first_name}!\nI am a telegraph uploader bot.",
                      buttons=[
                          Button.inline("Help", data="help"),
-                         Button.url("Dev", url="https://t.me/BotzHub")
+                         Button.url("Dev", url="https://t.me/NexaBotsUpdates")
                      ])
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data="help"))
 async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
-        return await event.edit(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/BotzHub")])
-    await event.edit(f"Send me a picture and I will upload it to Telegraph!\n\n~ @BotzHub")
+        return await event.edit(f"{ok.user.first_name}, please join my channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/NexaBotsUpdates")])
+    await event.edit(f"Send me a picture and I will upload it to Telegraph!\n\n~ @@NexaBotsUpdates")
 
 @BotzHub.on(events.NewMessage(incoming=True, func=lambda e: e.is_private and e.media))
 async def uploader(event):
@@ -95,5 +95,5 @@ def resize_image(image):
     tmp = im.save(image, "PNG")
 
 print("Bot has started.")
-print("Do visit @BotzHub..")
+print("Do visit @@NexaBotsUpdates..")
 BotzHub.run_until_disconnected()
