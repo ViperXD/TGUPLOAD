@@ -21,7 +21,7 @@ try:
     apihash = config("API_HASH")
     bottoken = config("BOT_TOKEN")
 except:
-    print("Environment vars are missing! Kindly recheck.")
+    print("Environment vars are missing! Kindly recheck and try again!")
     print("Bot is quiting...")
     exit()
 
@@ -33,7 +33,7 @@ if (apiid != None and apihash!= None and bottoken != None):
         print("Bot is quiting...")
         exit()
 else:
-    print("Environment vars are missing! Kindly recheck.")
+    print("Environment vars are missing! Kindly recheck and try again!")
     print("Bot is quiting...")
     exit()
 
@@ -53,14 +53,15 @@ async def start(event):
     await event.reply(f"Hello {ok.user.first_name}!\nI am a telegraph uploader bot.",
                      buttons=[
                          Button.inline("❓Help❓", data="help"),
-                         Button.url("🔰Dev🔰", url="https://t.me/NexaBotsUpdates")
+                         Button.url("🔰My Dev🔰", url="https://t.me/Bruh_0x")
+                         Button.url("➰My Updates Channel➰", url="https://t.me/NexaBotsUpdates")
                      ])
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data="help"))
 async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
-        return await event.edit(f"{ok.user.first_name}, please join my updates channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/NexaBotsUpdates")])
+        return await event.edit(f"{ok.user.first_name}, Please join my updates channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/NexaBotsUpdates")])
     await event.edit(f"Send me a picture and I will upload it to Telegraph!\n\n~ @NexaBotsUpdates")
 
 @BotzHub.on(events.NewMessage(incoming=True, func=lambda e: e.is_private and e.media))
@@ -71,7 +72,7 @@ async def uploader(event):
     if not os.path.isdir(TMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TMP_DOWNLOAD_DIRECTORY)
     pic = event.media
-    ok = await event.reply("`Downloading...`")
+    ok = await event.reply("`Downloading Your File... Please wait...`")
     downloaded_file_name = await BotzHub.download_media(pic, TMP_DOWNLOAD_DIRECTORY)
     if downloaded_file_name.endswith((".webp")):
         await ok.edit("`Oh no! It's a sticker...\nLemme convert it!!`")
