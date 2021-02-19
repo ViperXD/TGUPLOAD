@@ -1,5 +1,5 @@
 # TeleNexaUploader
-A Forked one! 😂😂
+A Forked one! 😂😂! You can find wiki [here](https://github.com/Hirusha-H/TelegraphUploader/wiki)
 # Wanna Help?
 <a href="https://t.me/NexaBotsUpdates"> <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white"/></a>
 
