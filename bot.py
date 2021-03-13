@@ -1,5 +1,6 @@
 # Part of < https://github.com/xditya/TelegraphUploader >
 # (c) 2021 @xditya.
+# Edited by Hirusha-H
 
 import os
 import logging
@@ -10,6 +11,7 @@ from decouple import config
 from telethon.errors.rpcerrorlist import UserNotParticipantError
 from telethon.tl.functions.channels import GetParticipantRequest
 from telegraph import Telegraph, exceptions, upload_file
+from config import Config
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.INFO)
 
