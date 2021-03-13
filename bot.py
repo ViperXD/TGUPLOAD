@@ -54,7 +54,6 @@ async def start(event):
     await event.reply(f"Hello {ok.user.first_name}!\nI am a telegraph uploader bot.",
                      buttons=[
                          Button.inline("❓Help❓", data="help"),
-                         Button.url("🔰 My Dev 🔰", url="https://t.me/Bruh_0x"),
                          Button.url("🔰My Updates Channel🔰", url="https://t.me/NexaBotsUpdates")
                      ])
 
