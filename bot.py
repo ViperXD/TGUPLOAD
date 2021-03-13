@@ -56,7 +56,7 @@ async def start(event):
                      buttons=[
                          Button.inline("❓Help❓", data="help"),
                          Button.url("🔰My Dev🔰", url="https://t.me/Bruh_0x")
-                         Button.url("➰My Updates Channel➰", url="https://t.me/NexaBotsUpdates")
+                         Button.url("🔰My Updates Channel🔰", url="https://t.me/NexaBotsUpdates")
                      ])
 
 @BotzHub.on(events.callbackquery.CallbackQuery(data="help"))
