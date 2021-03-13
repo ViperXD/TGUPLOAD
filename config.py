@@ -1,5 +1,7 @@
 # @NexaBotsUpdates
 
+class Config(object):
+
     BOT_TOKEN = "1695608546:AAHaCoq5KUz7WmdyszacidBWSBfgoDSxpEM"
 
 
