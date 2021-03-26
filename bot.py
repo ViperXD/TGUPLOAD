@@ -51,7 +51,7 @@ async def check_user(id):
 @BotzHub.on(events.NewMessage(incoming=True, pattern="/start", func=lambda e: e.is_private))
 async def start(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
-    await event.reply(f"Hi, 😉️ {ok.user.first_name}!\nI am a telegraph uploader bot. Just Forward or Send me Media!",
+    await event.reply(f"Hi, 😉️ {ok.user.first_name}!\nI am a telegraph uploader bot. Just Forward or Send me Supported Media!\n\nFound Bugs? or Any Suggestions? 🤔️. Go here **@Nexa_bots**",
                      buttons=[
                          Button.inline("About 🤷‍♂️️", data="about"),
                          Button.inline("Help ❓", data="help"),
@@ -78,7 +78,7 @@ async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
         return await event.edit(f"{ok.user.first_name}, You must join my updates channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/NexaBotsUpdates")])
-    await event.edit(f"Hi, 😉️ {ok.user.first_name}!\nIm a Simple Telegraph Uploader Bot! 🙂️\n\nMaster : **[I'm Not A Bot](https://t.me/Bruh_0x) .\n\n Also Join **@NexaBotsUpdates** .")
+    await event.edit(f"Hi, 😉️ {ok.user.first_name}!\nIm a Simple Telegraph Uploader Bot! 🙂️\n\nMaster : **[I'm Not A Bot](https://t.me/Bruh_0x) .\n\nAlso Join **@NexaBotsUpdates** .")
 
 
   
@@ -87,7 +87,7 @@ async def _(event):
     ok = await BotzHub(GetFullUserRequest(event.sender_id))
     if (await check_user(event.sender_id)) == False:
         return await event.edit(f"{ok.user.first_name}, You must join my updates channel to use me!", buttons=[Button.url("Join Channel", url="https://t.me/NexaBotsUpdates")])
-    await event.edit(f"")                        
+    await event.edit(f"Hi, 😉️ {ok.user.first_name}!\nIm a Simple Telegraph Uploader Bot! 🙂️\n\nCredits To **XDITYA**\n\nJoin **@NexaBotsUpdates**")                        
 
                           
 @BotzHub.on(events.NewMessage(incoming=True, func=lambda e: e.is_private and e.media))
@@ -111,7 +111,7 @@ async def uploader(event):
         return
     else:
         os.remove(downloaded_file_name)
-        await ok.edit("Successfully Uploaded to [Telegraph](https://telegra.ph{})\n\n~ Join @NexaBotsUpdates".format(media_urls[0]),
+        await ok.edit("Successfully Uploaded to [Telegraph](https://telegra.ph{})\n\n~ Join @NexaBotsUpdates ❤️".format(media_urls[0]),
                     link_preview=True,
                     buttons=[
                         Button.url("🔗 Link To File 🔗", url=f"https://telegra.ph{media_urls[0]}")
