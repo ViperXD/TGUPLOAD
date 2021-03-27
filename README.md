@@ -7,7 +7,7 @@ A Forked one! 😂😂! You can find wiki [here](https://github.com/Hirusha-H/Te
 A Simple Telegram Bot 🤖 that can upload images , small videos and some stickers.
 
 ## Deploy
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Hirusha-H/TelegraphUploader)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy/)
 
 ## Changes
 Forked from xditya's telegraphuploader! 😅
